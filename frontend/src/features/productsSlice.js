@@ -1,8 +1,8 @@
 
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-const API_URL = 'http://localhost:3000/api/products';
-const SERVER_URL = 'http://localhost:3000';
+const API_URL = `${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/api/products`;
+const SERVER_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
 
 // Convert backend product to frontend format
 const formatProduct = (product) => ({

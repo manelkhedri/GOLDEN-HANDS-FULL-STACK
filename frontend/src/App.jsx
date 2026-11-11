@@ -76,8 +76,11 @@ function App() {
   };
 
   const handleGoogleLogin = () => {
-    window.location.href = 'http://localhost:3000/api/auth/google';
-  };
+  const API_BASE_URL =
+    import.meta.env.VITE_API_URL || 'http://localhost:3000';
+
+  window.location.href = `${API_BASE_URL}/api/auth/google`;
+ };
 
   const handleEmailLogin = async (e) => {
     e.preventDefault();
