@@ -171,7 +171,7 @@ router.get('/google/callback', (req, res, next) => {
         { expiresIn: '1d' }
       );
 
-      return res.redirect(`http://localhost:5173/#token=${token}`);
+      return res.redirect(`${process.env.FRONTEND_URL}/#token=${token}`);
 
     }
   )(req, res, next);
